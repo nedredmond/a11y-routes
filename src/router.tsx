@@ -8,22 +8,21 @@ import loader from "./loader";
 import { parse } from "./utils";
 import { Text } from "./components/text";
 
-const wcagRoutes = (wcag: WcagResponseData) => {
-  console.log({ wcag });
-  return wcag.principles
+const wcagRoutes = (wcag: WcagResponseData) =>
+  wcag.principles
     .map((principle): RouteObject[] =>
       pathAliases.map((pKey) => ({
-        path: `/${parse(principle[pKey])}`,
+        path: `wcag/${parse(principle[pKey])}`,
         loader: () => loader(principle),
         children: principle.guidelines
           .map((guideline): RouteObject[] =>
             pathAliases.map((gKey) => ({
-              path: `/${parse(principle[pKey])}/${parse(guideline[gKey])}`,
+              path: `wcag/${parse(principle[pKey])}/${parse(guideline[gKey])}`,
               loader: () => loader(guideline),
               children: guideline.successcriteria
                 .map((successcriterion): RouteObject[] =>
                   pathAliases.map((scKey) => ({
-                    path: `/${parse(principle[pKey])}/${parse(
+                    path: `wcag/${parse(principle[pKey])}/${parse(
                       guideline[gKey],
                     )}/${parse(successcriterion[scKey])}`,
                     loader: () => loader(successcriterion),
@@ -36,7 +35,6 @@ const wcagRoutes = (wcag: WcagResponseData) => {
       })),
     )
     .flat();
-};
 
 const router = (data: WcagResponseData) =>
   createHashRouter([
