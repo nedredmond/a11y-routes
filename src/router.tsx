@@ -40,7 +40,15 @@ const router = (data: WcagResponseData) =>
   createHashRouter([
     {
       path: "/",
-      element: <Text>Search will go here!</Text>,
+      element: (
+        <Text>
+          Add the spec to the URL like so: <code>/#/wcag/1</code> to go to the
+          first principal, or <code>/#/wcag/1/1/1</code> to go to the first
+          success criterion. <br /> You can also use the names of principles,
+          guidelines, and criteria, like so:
+          <code> /#/wcag/robust/compatible/name-role-value</code>
+        </Text>
+      ),
     },
     ...wcagRoutes(data),
     {
@@ -58,6 +66,7 @@ const Router = () => (
       if (!data) {
         return <Text>Something went wrong!</Text>;
       }
+      console.log("router", router(data).routes);
       return <RouterProvider router={router(data)} />;
     }}
   </WcagContext.Consumer>
