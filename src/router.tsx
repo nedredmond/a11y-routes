@@ -13,9 +13,10 @@ const router = (data: WcagResponseData) =>
         <Text>
           Add the spec to the URL like so: <code>/#/wcag2/1</code> to go to the
           first principal, or <code>/#/wcag2/1/1/1</code> to go to the first
-          success criterion. <br /> You can also use the names of principles,
-          guidelines, and criteria, like so:
-          <code> /#/wcag2/robust/compatible/name-role-value</code>
+          success criterion.
+          <br /> <br />
+          You can also use the names of principles, guidelines, and criteria,
+          like so: <code>/#/wcag2/robust/compatible/name-role-value</code>
         </Text>
       ),
     },
