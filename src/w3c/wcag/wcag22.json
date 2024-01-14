@@ -1,0 +1,454 @@
+{
+  "principles": [
+    {
+      "id": "perceivable",
+      "num": "1",
+      "guidelines": [
+        {
+          "id": "text-alternatives",
+          "num": "1.1",
+          "successcriteria": [
+            {
+              "id": "non-text-content",
+              "num": "1.1.1"
+            }
+          ]
+        },
+        {
+          "id": "time-based-media",
+          "num": "1.2",
+          "successcriteria": [
+            {
+              "id": "audio-only-and-video-only-prerecorded",
+              "num": "1.2.1"
+            },
+            {
+              "id": "captions-prerecorded",
+              "num": "1.2.2"
+            },
+            {
+              "id": "audio-description-or-media-alternative-prerecorded",
+              "num": "1.2.3"
+            },
+            {
+              "id": "captions-live",
+              "num": "1.2.4"
+            },
+            {
+              "id": "audio-description-prerecorded",
+              "num": "1.2.5"
+            },
+            {
+              "id": "sign-language-prerecorded",
+              "num": "1.2.6"
+            },
+            {
+              "id": "extended-audio-description-prerecorded",
+              "num": "1.2.7"
+            },
+            {
+              "id": "media-alternative-prerecorded",
+              "num": "1.2.8"
+            },
+            {
+              "id": "audio-only-live",
+              "num": "1.2.9"
+            }
+          ]
+        },
+        {
+          "id": "adaptable",
+          "num": "1.3",
+          "successcriteria": [
+            {
+              "id": "info-and-relationships",
+              "num": "1.3.1"
+            },
+            {
+              "id": "meaningful-sequence",
+              "num": "1.3.2"
+            },
+            {
+              "id": "sensory-characteristics",
+              "num": "1.3.3"
+            },
+            {
+              "id": "orientation",
+              "num": "1.3.4"
+            },
+            {
+              "id": "identify-input-purpose",
+              "num": "1.3.5"
+            },
+            {
+              "id": "identify-purpose",
+              "num": "1.3.6"
+            }
+          ]
+        },
+        {
+          "id": "distinguishable",
+          "num": "1.4",
+          "successcriteria": [
+            {
+              "id": "use-of-color",
+              "num": "1.4.1"
+            },
+            {
+              "id": "audio-control",
+              "num": "1.4.2"
+            },
+            {
+              "id": "contrast-minimum",
+              "num": "1.4.3"
+            },
+            {
+              "id": "resize-text",
+              "num": "1.4.4"
+            },
+            {
+              "id": "images-of-text",
+              "num": "1.4.5"
+            },
+            {
+              "id": "contrast-enhanced",
+              "num": "1.4.6"
+            },
+            {
+              "id": "low-or-no-background-audio",
+              "num": "1.4.7"
+            },
+            {
+              "id": "visual-presentation",
+              "num": "1.4.8"
+            },
+            {
+              "id": "images-of-text-no-exception",
+              "num": "1.4.9"
+            },
+            {
+              "id": "reflow",
+              "num": "1.4.10"
+            },
+            {
+              "id": "non-text-contrast",
+              "num": "1.4.11"
+            },
+            {
+              "id": "text-spacing",
+              "num": "1.4.12"
+            },
+            {
+              "id": "content-on-hover-or-focus",
+              "num": "1.4.13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "operable",
+      "num": "2",
+      "guidelines": [
+        {
+          "id": "keyboard-accessible",
+          "num": "2.1",
+          "successcriteria": [
+            {
+              "id": "keyboard",
+              "num": "2.1.1"
+            },
+            {
+              "id": "no-keyboard-trap",
+              "num": "2.1.2"
+            },
+            {
+              "id": "keyboard-no-exception",
+              "num": "2.1.3"
+            },
+            {
+              "id": "character-key-shortcuts",
+              "num": "2.1.4"
+            }
+          ]
+        },
+        {
+          "id": "enough-time",
+          "num": "2.2",
+          "successcriteria": [
+            {
+              "id": "timing-adjustable",
+              "num": "2.2.1"
+            },
+            {
+              "id": "pause-stop-hide",
+              "num": "2.2.2"
+            },
+            {
+              "id": "no-timing",
+              "num": "2.2.3"
+            },
+            {
+              "id": "interruptions",
+              "num": "2.2.4"
+            },
+            {
+              "id": "re-authenticating",
+              "num": "2.2.5"
+            },
+            {
+              "id": "timeouts",
+              "num": "2.2.6"
+            }
+          ]
+        },
+        {
+          "id": "seizures-and-physical-reactions",
+          "num": "2.3",
+          "successcriteria": [
+            {
+              "id": "three-flashes-or-below-threshold",
+              "num": "2.3.1"
+            },
+            {
+              "id": "three-flashes",
+              "num": "2.3.2"
+            },
+            {
+              "id": "animation-from-interactions",
+              "num": "2.3.3"
+            }
+          ]
+        },
+        {
+          "id": "navigable",
+          "num": "2.4",
+          "successcriteria": [
+            {
+              "id": "bypass-blocks",
+              "num": "2.4.1"
+            },
+            {
+              "id": "page-titled",
+              "num": "2.4.2"
+            },
+            {
+              "id": "focus-order",
+              "num": "2.4.3"
+            },
+            {
+              "id": "link-purpose-in-context",
+              "num": "2.4.4"
+            },
+            {
+              "id": "multiple-ways",
+              "num": "2.4.5"
+            },
+            {
+              "id": "headings-and-labels",
+              "num": "2.4.6"
+            },
+            {
+              "id": "focus-visible",
+              "num": "2.4.7"
+            },
+            {
+              "id": "location",
+              "num": "2.4.8"
+            },
+            {
+              "id": "link-purpose-link-only",
+              "num": "2.4.9"
+            },
+            {
+              "id": "section-headings",
+              "num": "2.4.10"
+            },
+            {
+              "id": "focus-not-obscured-minimum",
+              "num": "2.4.11"
+            },
+            {
+              "id": "focus-not-obscured-enhanced",
+              "num": "2.4.12"
+            },
+            {
+              "id": "focus-appearance",
+              "num": "2.4.13"
+            }
+          ]
+        },
+        {
+          "id": "input-modalities",
+          "num": "2.5",
+          "successcriteria": [
+            {
+              "id": "pointer-gestures",
+              "num": "2.5.1"
+            },
+            {
+              "id": "pointer-cancellation",
+              "num": "2.5.2"
+            },
+            {
+              "id": "label-in-name",
+              "num": "2.5.3"
+            },
+            {
+              "id": "motion-actuation",
+              "num": "2.5.4"
+            },
+            {
+              "id": "target-size-enhanced",
+              "num": "2.5.5"
+            },
+            {
+              "id": "concurrent-input-mechanisms",
+              "num": "2.5.6"
+            },
+            {
+              "id": "dragging-movements",
+              "num": "2.5.7"
+            },
+            {
+              "id": "target-size-minimum",
+              "num": "2.5.8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "understandable",
+      "num": "3",
+      "guidelines": [
+        {
+          "id": "readable",
+          "num": "3.1",
+          "successcriteria": [
+            {
+              "id": "language-of-page",
+              "num": "3.1.1"
+            },
+            {
+              "id": "language-of-parts",
+              "num": "3.1.2"
+            },
+            {
+              "id": "unusual-words",
+              "num": "3.1.3"
+            },
+            {
+              "id": "abbreviations",
+              "num": "3.1.4"
+            },
+            {
+              "id": "reading-level",
+              "num": "3.1.5"
+            },
+            {
+              "id": "pronunciation",
+              "num": "3.1.6"
+            }
+          ]
+        },
+        {
+          "id": "predictable",
+          "num": "3.2",
+          "successcriteria": [
+            {
+              "id": "on-focus",
+              "num": "3.2.1"
+            },
+            {
+              "id": "on-input",
+              "num": "3.2.2"
+            },
+            {
+              "id": "consistent-navigation",
+              "num": "3.2.3"
+            },
+            {
+              "id": "consistent-identification",
+              "num": "3.2.4"
+            },
+            {
+              "id": "change-on-request",
+              "num": "3.2.5"
+            },
+            {
+              "id": "consistent-help",
+              "num": "3.2.6"
+            }
+          ]
+        },
+        {
+          "id": "input-assistance",
+          "num": "3.3",
+          "successcriteria": [
+            {
+              "id": "error-identification",
+              "num": "3.3.1"
+            },
+            {
+              "id": "labels-or-instructions",
+              "num": "3.3.2"
+            },
+            {
+              "id": "error-suggestion",
+              "num": "3.3.3"
+            },
+            {
+              "id": "error-prevention-legal-financial-data",
+              "num": "3.3.4"
+            },
+            {
+              "id": "help",
+              "num": "3.3.5"
+            },
+            {
+              "id": "error-prevention-all",
+              "num": "3.3.6"
+            },
+            {
+              "id": "redundant-entry",
+              "num": "3.3.7"
+            },
+            {
+              "id": "accessible-authentication-minimum",
+              "num": "3.3.8"
+            },
+            {
+              "id": "accessible-authentication-enhanced",
+              "num": "3.3.9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "robust",
+      "num": "4",
+      "guidelines": [
+        {
+          "id": "compatible",
+          "num": "4.1",
+          "successcriteria": [
+            {
+              "id": "parsing",
+              "num": "4.1.1"
+            },
+            {
+              "id": "name-role-value",
+              "num": "4.1.2"
+            },
+            {
+              "id": "status-messages",
+              "num": "4.1.3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
