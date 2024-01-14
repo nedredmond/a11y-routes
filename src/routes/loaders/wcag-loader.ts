@@ -4,7 +4,7 @@ import { parse } from "../../utils";
 
 const baseRedirectUrl = "https://www.w3.org/TR/WCAG22/" as const;
 
-export default async (item?: WcagItem) =>
+export default (item?: WcagItem) =>
   item
     ? redirect(`${baseRedirectUrl}#${parse(item.id)}`)
     : redirect(baseRedirectUrl);

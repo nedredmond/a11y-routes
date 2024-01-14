@@ -3,8 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Router from "./router";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <Router />
-  </React.StrictMode>,
-);
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  ReactDOM.createRoot(rootElement).render(
+    // END: ed8c6549bwf9
+    <React.StrictMode>
+      <Router />
+    </React.StrictMode>,
+  );
+}

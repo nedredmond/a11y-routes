@@ -5,7 +5,7 @@ export default async (): Promise<WcagResponseData> =>
     "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/wcag.json",
   ).then(async (res) => {
     if (res.ok) {
-      return res.json();
+      return res.json() as Promise<WcagResponseData>;
     }
     throw new Error("Failed to fetch WCAG data");
   });
