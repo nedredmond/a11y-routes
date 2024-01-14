@@ -3,7 +3,7 @@ export const pathAliases = [
   "num", // i.e., 1 (for Principle) or 1.1 (for Guideline) or 1.1.1 (for Success Criterion)
 ] as const;
 
-export type WcagItem = Record<(typeof pathAliases)[number], string>;
+type WcagItem = Record<(typeof pathAliases)[number], string>;
 interface Principle {
   guidelines: GuidelineType[];
 }
