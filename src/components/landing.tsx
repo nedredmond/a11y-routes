@@ -21,7 +21,7 @@ export const LandingMessage = () => (
     </Text>
     <Text>
       You can also use the names of principles, guidelines, or criteria by
-      themselves: <SelfLink to="/wcag2/readable" /> or{" "}
+      themselves: <SelfLink to="/wcag22/readable" /> or{" "}
       <SelfLink to="/wcag22/target-size-minimum" />
     </Text>
     <Text>
