@@ -26,33 +26,40 @@ export const wcagRoutes = (wcag: WcagResponseData) => {
     return route;
   };
 
-  const nestedRoutes = [
-    {
-      path: "wcag2",
-      loader: () => loader(),
-      children: [
-        ...wcag.principles
-          .map((principle): RouteObject[] =>
-            pathAliases.map((pKey) => ({
-              ...routeFields(principle, pKey),
-              children: principle.guidelines
-                .map((guideline): RouteObject[] =>
-                  pathAliases.map((gKey) => ({
-                    ...routeFields(guideline, gKey),
-                    children: guideline.successcriteria
-                      .map((successcriterion): RouteObject[] =>
-                        pathAliases.map((scKey) => ({
-                          ...routeFields(successcriterion, scKey),
-                        })),
-                      )
-                      .flat(),
+  const childRoutes = wcag.principles
+    .map((principle): RouteObject[] =>
+      pathAliases.map((pKey) => ({
+        ...routeFields(principle, pKey),
+        children: principle.guidelines
+          .map((guideline): RouteObject[] =>
+            pathAliases.map((gKey) => ({
+              ...routeFields(guideline, gKey),
+              children: guideline.successcriteria
+                .map((successcriterion): RouteObject[] =>
+                  pathAliases.map((scKey) => ({
+                    ...routeFields(successcriterion, scKey),
                   })),
                 )
                 .flat(),
             })),
           )
           .flat(),
-      ],
+      })),
+    )
+    .flat();
+
+  const nestedRoutes = [
+    // TODO: Possibly add other spec versions here
+    {
+      path: "wcag22",
+      loader: () => loader(),
+      children: childRoutes,
+    },
+    // skipping version goes straight to latest
+    {
+      path: "wcag",
+      loader: () => loader(),
+      children: childRoutes,
     },
   ];
 
