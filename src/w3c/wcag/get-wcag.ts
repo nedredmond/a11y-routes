@@ -7,5 +7,5 @@ export default async (): Promise<WcagResponseData> =>
     if (res.ok) {
       return res.json() as Promise<WcagResponseData>;
     }
-    throw new Error("Failed to fetch WCAG data");
+    return Promise.reject(new Error("Failed to fetch WCAG data"));
   });
