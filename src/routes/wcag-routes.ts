@@ -1,38 +1,58 @@
 import type { RouteObject } from "react-router-dom";
-import type { WcagResponseData } from "../types";
+import type { WcagItem, WcagResponseData } from "../types";
 import { pathAliases } from "../types";
 import { parse } from "../utils";
 import loader from "./loaders/wcag-loader";
 
-export const wcagRoutes = (wcag: WcagResponseData): RouteObject[] => [
-  {
-    path: "wcag2",
-    loader: () => loader(),
-    children: [
-      ...wcag.principles
-        .map((principle): RouteObject[] =>
-          pathAliases.map((pKey) => ({
-            path: `${parse(principle[pKey])}`,
-            loader: () => loader(principle),
-            children: principle.guidelines
-              .map((guideline): RouteObject[] =>
-                pathAliases.map((gKey) => ({
-                  path: `${parse(guideline[gKey])}`,
-                  loader: () => loader(guideline),
-                  children: guideline.successcriteria
-                    .map((successcriterion): RouteObject[] =>
-                      pathAliases.map((scKey) => ({
-                        path: `${parse(successcriterion[scKey])}`,
-                        loader: () => loader(successcriterion),
-                      })),
-                    )
-                    .flat(),
-                })),
-              )
-              .flat(),
-          })),
-        )
-        .flat(),
-    ],
-  },
-];
+interface RouteFields {
+  path: string;
+  loader: () => Response;
+}
+
+export const wcagRoutes = (wcag: WcagResponseData) => {
+  const routeFieldsMap = new Map<[WcagItem, keyof WcagItem], RouteFields>();
+
+  const routeFields = (item: WcagItem, key: keyof WcagItem) => {
+    const cached = routeFieldsMap.get([item, key]);
+    if (cached) return cached;
+
+    const route = {
+      path: parse(item[key]),
+      loader: () => loader(item),
+    };
+
+    routeFieldsMap.set([item, key], route);
+
+    return route;
+  };
+
+  return [
+    {
+      path: "wcag2",
+      loader: () => loader(),
+      children: [
+        ...wcag.principles
+          .map((principle): RouteObject[] =>
+            pathAliases.map((pKey) => ({
+              ...routeFields(principle, pKey),
+              children: principle.guidelines
+                .map((guideline): RouteObject[] =>
+                  pathAliases.map((gKey) => ({
+                    ...routeFields(guideline, gKey),
+                    children: guideline.successcriteria
+                      .map((successcriterion): RouteObject[] =>
+                        pathAliases.map((scKey) => ({
+                          ...routeFields(successcriterion, scKey),
+                        })),
+                      )
+                      .flat(),
+                  })),
+                )
+                .flat(),
+            })),
+          )
+          .flat(),
+      ],
+    },
+  ];
+};
