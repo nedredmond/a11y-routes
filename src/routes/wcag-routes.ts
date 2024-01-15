@@ -26,7 +26,7 @@ export const wcagRoutes = (wcag: WcagResponseData) => {
     return route;
   };
 
-  return [
+  const nestedRoutes = [
     {
       path: "wcag2",
       loader: () => loader(),
@@ -55,4 +55,12 @@ export const wcagRoutes = (wcag: WcagResponseData) => {
       ],
     },
   ];
+
+  const routesArray = Array.from(routeFieldsMap.entries());
+
+  const flatRoutes = routesArray
+    .filter(([[_, key]]) => key === "id")
+    .map(([_, route]) => route);
+
+  return [...nestedRoutes, ...flatRoutes];
 };
