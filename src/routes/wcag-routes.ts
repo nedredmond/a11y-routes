@@ -48,26 +48,32 @@ export const wcagRoutes = (wcag: WcagResponseData) => {
     )
     .flat();
 
+    const routesArray = Array.from(routeFieldsMap.entries());
+
+    const flatRoutes = routesArray
+      .filter(([[_, key]]) => key === "id")
+      .map(([_, route]) => route);
+
   const nestedRoutes = [
     // TODO: Possibly add other spec versions here
     {
       path: "wcag22",
       loader: () => loader(),
-      children: childRoutes,
+      children: [
+        ...childRoutes,
+        ...flatRoutes,
+      ],
     },
     // skipping version goes straight to latest
     {
       path: "wcag",
       loader: () => loader(),
-      children: childRoutes,
+      children: [
+        ...childRoutes,
+        ...flatRoutes,
+      ],
     },
   ];
 
-  const routesArray = Array.from(routeFieldsMap.entries());
-
-  const flatRoutes = routesArray
-    .filter(([[_, key]]) => key === "id")
-    .map(([_, route]) => route);
-
-  return [...nestedRoutes, ...flatRoutes];
+  return nestedRoutes;
 };
