@@ -9,7 +9,7 @@ const SelfLink = ({ to }: { to: string }) => (
 
 export const LandingMessage = () => (
   <>
-    <h1>allyref.link</h1>
+    <h1>a11yref.link</h1>
     <Text>
       Add the spec to the URL like so: <SelfLink to={"/wcag22/1"} /> to go to
       the first WCAG principal, or <SelfLink to="/wcag22/1/1/1" /> to go to the
